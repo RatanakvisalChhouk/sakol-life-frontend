@@ -1,18 +1,24 @@
 import { Button } from '@/components/ui/button'
-import { BackgroundBeams } from '@/components/ui/beams'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Hero() {
   return (
     <div className='relative px-10 py-24 flex flex-col overflow-hidden bg-accent-foreground dark:bg-secondary/30 transition-all duration-150 ease-in-out'>
-      <BackgroundBeams />
-
-      <div className='relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-screen-xl mx-auto'>
-
-        {/* left side */}
-        <section className='flex flex-col gap-6 z-10'>
-          <span className='inline-block py-1 px-3 rounded-full text-xs font-bold tracking-widest w-fit bg-secondary text-secondary-foreground'>
+      
+      {/* Centered content wrapper */}
+      <div className='relative w-full max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center z-10'>
+        
+        <section className='flex flex-col items-center gap-6 max-w-2xl'>
+          
+          {/* Redesigned High-Contrast Badge */}
+          <span className='inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-extrabold tracking-widest bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-container border border-primary/20 dark:border-primary-container/30 backdrop-blur-md shadow-xs select-none transition-colors duration-150'>
+            <svg 
+              className="w-3.5 h-3.5 text-primary dark:text-primary-container animate-[pulse_2s_infinite]" 
+              fill="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path d="M11.48 3.499c.151-.377.689-.377.84 0l1.733 4.318a.45.45 0 0 0 .337.28l4.63.535c.404.047.566.547.262.822l-3.486 3.161a.45.45 0 0 0-.134.412l1.004 4.542c.088.397-.34.707-.694.501l-4.025-2.336a.45.45 0 0 0-.446 0l-4.025 2.336c-.354.206-.782-.104-.694-.501l1.004-4.542a.45.45 0 0 0-.134-.412L3.16 9.986c-.304-.275-.142-.775.262-.822l4.63-.535a.45.45 0 0 0 .337-.28l1.733-4.319Z" />
+            </svg>
             OUR MISSION
           </span>
 
@@ -24,37 +30,34 @@ export default function Hero() {
             of Tomorrow
           </h1>
 
-          <p className='text-accent dark:text-secondary-foreground text-sm sm:text-base max-w-xl leading-relaxed'>
+          <p className='text-accent dark:text-secondary-foreground text-sm sm:text-base leading-relaxed'>
             Sakol Life is a dedicated platform designed to bridge the gap between
             high school and higher education for Cambodian students. We focus on
             tech-driven majors to align with national STEM development goals.
           </p>
 
-          <div className='flex flex-col sm:flex-row items-start sm:items-center gap-3'>
+          {/* Redesigned High-Converting CTA Button */}
+          <div className='flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto mt-2'>
             <Button
-              variant='ghost'
-              className='w-full sm:w-fit rounded-xl text-base h-12 px-8 font-semibold border border-primary text-primary hover:bg-primary/10'
+              className='group w-full sm:w-fit rounded-xl text-base h-12 px-8 font-bold bg-linear-to-r from-primary to-emerald-600 dark:from-emerald-500 dark:to-primary text-white shadow-lg shadow-primary/25 dark:shadow-none hover:opacity-95 hover:shadow-xl hover:shadow-primary/30 transition-all duration-200 active:scale-98'
               asChild
             >
-              <Link href='/quiz'>Take the Quiz</Link>
+              <Link href='/quiz' className='flex items-center gap-2 justify-center'>
+                Take the Quiz
+                <svg 
+                  className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor" 
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </Button>
           </div>
-        </section>
 
-        {/* right side */}
-        <section className='relative w-full group cursor-pointer mt-12 lg:mt-0'>
-          <div className='absolute -top-12 -right-12 w-64 h-64 rounded-full blur-3xl animate-pulse opacity-30 bg-primary pointer-events-none' />
 
-          <div className='relative rounded-3xl overflow-hidden shadow-2xl rotate-1'>
-            <Image
-              src='/images/cambodian-graduates.png'
-              alt='Cambodian graduates celebrating'
-              width={650}
-              height={400}
-              className='w-full h-[400px] object-cover transition-transform duration-500 ease-out group-hover:scale-105'
-            />
-            <div className='absolute inset-0 bg-black/10 dark:bg-black/20 rounded-3xl transition-opacity duration-300 group-hover:opacity-60' />
-          </div>
         </section>
 
       </div>
