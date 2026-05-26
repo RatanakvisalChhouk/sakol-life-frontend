@@ -5,12 +5,10 @@ export default function Hero() {
   return (
     <div className='relative px-10 py-24 flex flex-col overflow-hidden bg-accent-foreground dark:bg-secondary/30 transition-all duration-150 ease-in-out'>
       
-      {/* Centered content wrapper */}
       <div className='relative w-full max-w-screen-xl mx-auto flex flex-col items-center justify-center text-center z-10'>
         
         <section className='flex flex-col items-center gap-6 max-w-2xl'>
           
-          {/* Redesigned High-Contrast Badge */}
           <span className='inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-extrabold tracking-widest bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-container border border-primary/20 dark:border-primary-container/30 backdrop-blur-md shadow-xs select-none transition-colors duration-150'>
             <svg 
               className="w-3.5 h-3.5 text-primary dark:text-primary-container animate-[pulse_2s_infinite]" 
@@ -36,7 +34,6 @@ export default function Hero() {
             tech-driven majors to align with national STEM development goals.
           </p>
 
-          {/* Redesigned High-Converting CTA Button */}
           <div className='flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto mt-2'>
             <Button
               className='group w-full sm:w-fit rounded-xl text-base h-12 px-8 font-bold bg-linear-to-r from-primary to-emerald-600 dark:from-emerald-500 dark:to-primary text-white shadow-lg shadow-primary/25 dark:shadow-none hover:opacity-95 hover:shadow-xl hover:shadow-primary/30 transition-all duration-200 active:scale-98'
